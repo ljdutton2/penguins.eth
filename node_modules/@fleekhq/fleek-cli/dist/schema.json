@@ -1,0 +1,79 @@
+{
+    "description": "Fleek Configuration File used during CI and also by the Fleek CLI.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string"
+        },
+        "site": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "[CLI] ID of the fleek site to publish to."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "[CLI] Name of the fleek site."
+                },
+                "team": {
+                    "type": "string",
+                    "description": "[CLI] ID of the fleek team the site is owned by."
+                },
+                "platform": {
+                    "type": "string",
+                    "description": "[CLI] Platform the site should be deployed. ipfs or dfinity.",
+                    "enum": ["ipfs", "dfinity"]
+                },
+                "source": {
+                    "type": "string",
+                    "description": "[CLI] Where fleek system fetches source code when deploy is trigger. github or ipfs",
+                    "enum": ["ipfs", "github"]
+                }
+            },
+            "required": [
+                "id",
+                "team",
+                "platform",
+                "source"
+            ]
+        },
+        "build": {
+            "type": "object",
+            "description": "Configurations applied in Fleek CI.",
+            "additionalProperties": false,
+            "properties": {
+                "image": {
+                    "type": "string",
+                    "default": "node:slim",
+                    "description": "public docker image, default to node:slim"
+                },
+                "command": {
+                    "type": ["string", "null"],
+                    "description": "The build command. No command is executed by default."
+                },
+                "rootDir": {
+                    "type": "string",
+                    "description": "Root directory is where the fleek project is initialized."
+                },
+                "publicDir": {
+                    "type": "string",
+                    "description": "This directory is uploaded to IPFS. baseDir is used by default, and is the root when resolving a relative publicDir."
+                },
+                "baseDir": {
+                    "type": "string",
+                    "description": "Build command is executed in this directory, root directory is used by default."
+                },
+                "environment": {
+                    "type": "object",
+                    "description": "Key/value object of environment variables.",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
