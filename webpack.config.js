@@ -13,7 +13,7 @@ module.exports = {
             from: "./app/index.html", to: "index.html"
         },
         {
-            from: "./app/img/shout.png", to: "shout.png"
+            from: "./app/img/penguinn.png", to: "penguinn.png"
         }
         ]),
     ],

@@ -15,9 +15,11 @@
   "license": "ISC",
   "dependencies": {
     "@fleekhq/fleek-cli": "^0.1.8",
+    "@fleekhq/fleek-storage-js": "^1.0.21",
     "@openzeppelin/contracts": "^4.5.0",
     "@truffle/hdwallet-provider": "^1.2.3",
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.0",
+    "web3": "^1.7.1"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^5.0.5",
