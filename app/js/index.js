@@ -42,7 +42,7 @@ const App = {
 
         // Update the page using jQuery.
         $('#balance').html(balance);
-        $('#total-shouts').show();
+        $('#total-penguins').show();
         $('my-account').html(this.account);
     },
 
